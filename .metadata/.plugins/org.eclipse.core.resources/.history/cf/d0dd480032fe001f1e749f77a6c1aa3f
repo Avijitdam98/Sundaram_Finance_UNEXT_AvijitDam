@@ -1,0 +1,18 @@
+package com.exceptions;
+
+public class ThrowDemo {
+    static void meth() {
+        System.out.println("Welcome to meth");
+        throw new ArithmeticException("Demo"); // Fixed exception name
+    }
+
+    public static void main(String[] args) {
+        try {
+            meth(); // Call the method inside try block
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+
+        System.out.println("Hello"); // Now this line will execute
+    }
+}

@@ -1,0 +1,26 @@
+// Rectangle.java
+class Rectangle {
+    int length, breadth;    //instnace variable 
+    boolean flag;
+    void setValues(int p,int q)
+    {
+    	length=p;
+    	breadth=q;
+    }
+
+    void showArea() {
+        System.out.println(breadth* length+ " "+flag);
+        
+    }
+}
+
+
+
+//RectangleMain.java
+public class RectangleMain {
+ public static void main(String[] args) {
+     Rectangle obj = new Rectangle();  
+     obj.setValues(10,20);
+     obj.showArea();
+ }
+}

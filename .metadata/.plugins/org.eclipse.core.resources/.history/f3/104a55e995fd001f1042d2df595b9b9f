@@ -1,0 +1,15 @@
+package com.pack2;
+
+interface i1{
+	int x,y;
+	void add(int a,int b);
+}
+
+
+
+public class InterfaceDemo {
+	public static void main(String[] args) {
+		
+	}
+
+}

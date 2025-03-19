@@ -1,0 +1,22 @@
+package com.exceptions;
+
+import java.util.Scanner;
+
+public class FinallyException {
+
+	public static void main(String[] args) {
+		Scanner sc=null;
+		try {
+			sc=new Scanner(System.in);
+			int a=sc.nextInt();
+			int d=43
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			sc.close();
+		}
+
+	}
+
+}

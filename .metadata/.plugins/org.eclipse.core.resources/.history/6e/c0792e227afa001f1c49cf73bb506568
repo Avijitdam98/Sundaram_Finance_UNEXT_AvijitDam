@@ -1,0 +1,33 @@
+class Cuboids {
+    double l, b, h;
+
+    // Constructor with correct name
+    Cuboids(double length, double breadth, double height) {
+        l = length;
+        b = breadth;
+        h = height;
+    }
+
+    // Method 1: Calculates volume using instance variables
+    double volume() {
+        return l * b * h;
+    }
+
+    // Method 2: Overloaded version, calculates volume using different parameters
+    double volume(double length, double breadth, double height) {
+        return length * breadth * height;
+    }
+}
+
+public class TestCuboid {
+    public static void main(String[] args) {
+        // Corrected object creation
+        Cuboids c = new Cuboids(5, 4, 3);
+
+        // Calling the first method (without parameters, uses instance variables)
+        System.out.println("Volume using instance variables: " + c.volume());
+
+        // Calling the overloaded method (with different parameters)
+        System.out.println("Volume using method parameters: " + c.volume(7, 6, 5));
+    }
+}

@@ -1,0 +1,18 @@
+package com.pack2;
+
+public class finalkeyword {
+
+	public static void main(String[] args) {
+		class Example {
+		    final int value; // Not initialized here
+
+		    Example(int val) {
+		        value = val; // Can be assigned only once
+		    }
+		}
+
+		
+
+	}
+
+}

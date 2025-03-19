@@ -1,0 +1,16 @@
+package com.pack2;
+
+class Example {  
+    final int value;
+
+    Example(int val) {
+        value = val; 
+    }
+}
+
+public class finalkeyword { 
+    public static void main(String[] args) {
+        Example obj = new Example(100);
+        System.out.println("Final value: " + obj.value); // ✅ Access final variable
+    }
+}

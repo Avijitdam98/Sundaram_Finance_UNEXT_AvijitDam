@@ -1,0 +1,22 @@
+package com.pack2;
+
+class Example {  
+    final int value;  // Final variable
+
+    Example(int val) {
+        value = val;  // Assigned only once
+    }
+
+    void display() {
+        System.out.println("Final value: " + value);
+    }
+}
+
+public class finalkeyword {  
+    public static void main(String[] args) {
+        Example obj = new Example(100);
+        obj.display();
+        
+        // obj.value = 200;  // ❌ Error! Cannot reassign a final variable
+    }
+}

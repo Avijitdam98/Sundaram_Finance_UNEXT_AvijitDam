@@ -1,0 +1,21 @@
+package com.dynamicpolymorphism;
+
+class Libary{
+	String title;
+	String  author;
+	int yearPublished;
+	
+	//constructor 
+	LibaryItem(String Hello,String author,int yearPublished){
+		
+	}
+}
+
+
+public class LibaryDemo {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.dynamicpolymorphism;
+
+public class LibaryDemo {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

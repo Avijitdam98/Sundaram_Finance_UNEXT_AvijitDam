@@ -1,0 +1,17 @@
+package com.exceptions;
+
+public class FinallyException {
+
+	public static void main(String[] args) {
+		Scanner sc=null;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			
+		}
+
+	}
+
+}

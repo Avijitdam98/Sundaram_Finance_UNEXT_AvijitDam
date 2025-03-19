@@ -1,0 +1,16 @@
+package com.exceptions;
+
+
+
+public class ThrowDemo {
+	static void meth() {
+		System.out.println("Welcone to meth");
+		throw new ArrithmaticException ()
+	}
+
+	public static void main(String[] args) {
+		meth();
+		System.out.println("hello");
+	}
+
+}

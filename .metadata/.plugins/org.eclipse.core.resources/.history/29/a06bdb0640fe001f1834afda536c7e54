@@ -1,0 +1,16 @@
+package com.exceptions;
+
+import java.io.FileInputStream;
+
+public class ChekedExceptions {
+
+	public static void main(String[] args) {
+		
+		try{FileInputStream fis=new FileInputStream("d://a,text");
+		}catch(Exception e) {
+			System.out.println("");
+		}
+		
+	}
+
+}

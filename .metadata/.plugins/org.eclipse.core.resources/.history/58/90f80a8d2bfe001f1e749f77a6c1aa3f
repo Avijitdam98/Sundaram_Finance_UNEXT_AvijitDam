@@ -1,0 +1,10 @@
+package com.exceptions;
+
+public class AbnormalTermination {
+
+	public static void main(String[] args) {
+		Scnnaer sc=new Scnnaer(System.in);
+
+	}
+
+}

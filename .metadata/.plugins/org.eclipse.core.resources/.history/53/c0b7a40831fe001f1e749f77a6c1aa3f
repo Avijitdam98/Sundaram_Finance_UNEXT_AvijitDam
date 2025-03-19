@@ -1,0 +1,14 @@
+package com.exceptions;
+
+
+static void meth() {
+	
+}
+
+public class ThrowDemo {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

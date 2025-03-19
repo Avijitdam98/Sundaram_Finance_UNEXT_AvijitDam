@@ -1,0 +1,53 @@
+package com.abstractclas;
+import java.util.Scanner;
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Loan loanObj = new Loan();
+
+        System.out.println("Choose Employee Type: \n1. Permanent Employee \n2. Temporary Employee");
+        int choice = sc.nextInt();
+
+        Employee emp = null;
+
+        if (choice == 1) {
+            System.out.print("Enter Employee ID: ");
+            int empId = sc.nextInt();
+            sc.nextLine(); 
+            System.out.print("Enter Employee Name: ");
+            String empName = sc.nextLine();
+
+            System.out.print("Enter Basic Pay: ");
+            double basicPay = sc.nextDouble();
+
+            emp = new PermanentEmployee(empId, empName, basicPay);
+        } else if (choice == 2) {
+            System.out.print("Enter Employee ID: ");
+            int empId = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            System.out.print("Enter Employee Name: ");
+            String empName = sc.nextLine();
+
+            System.out.print("Enter Hours Worked: ");
+            int hoursWorked = sc.nextInt();
+
+            System.out.print("Enter Hourly Wages: ");
+            int hourlyWages = sc.nextInt();
+
+            emp = new TemporaryEmployee(empId, empName, hoursWorked, hourlyWages);
+        } else {
+            System.out.println("Invalid choice! Exiting...");
+            sc.close();
+            return;
+        }
+
+       
+        emp.calculateSalary();
+        emp.displayDetails();
+        System.out.println("Loan Amount: $" + loanObj.calculateLoanAmount(emp));
+
+        sc.close();
+    }
+}

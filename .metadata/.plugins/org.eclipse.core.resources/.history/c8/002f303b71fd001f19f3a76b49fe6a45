@@ -1,0 +1,9 @@
+package com.abstractclass;
+
+public class StaticDemo {
+
+	public static void main(String[] args) {
+		App obj1=new App();
+	}
+
+}

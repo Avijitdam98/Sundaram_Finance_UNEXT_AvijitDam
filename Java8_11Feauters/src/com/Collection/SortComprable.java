@@ -1,0 +1,52 @@
+
+import java.util.*;
+
+class Student1 implements Comparable<Student1>{
+    int rollno;
+    String name;
+    int age;
+    Student1(int rollno,String name,int age){
+        this.rollno=rollno;
+        this.name=name;
+        this.age=age;
+    }
+
+    public int compareTo(Student1 st){
+        return name.compareTo(st.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Student1 [rollno=" + rollno + ", name=" + name + ", age=" + age + "]";
+    }
+
+
+}
+
+
+
+class ComparableDemo{
+    public static void main(String args[]){
+        ArrayList<Student1> al=new ArrayList();
+        al.add(new Student1(101,"Vijay",23));
+        al.add(new Student1(106,"Ajay",27));
+        al.add(new Student1(105,"Jai",21));
+
+        Collections.sort(al);
+
+        System.out.println("traversing list iusing listiterator forwards and backward");
+        ListIterator<Student1> lt=al.listIterator();
+        while(lt.hasNext())
+        {
+            Student1 obj=lt.next();
+            System.out.println(obj);
+        }
+        System.out.println("printing backwards");
+        while(lt.hasPrevious())
+        {
+            Student1 obj=lt.previous();
+            System.out.println(obj);
+        }
+    }
+}
+

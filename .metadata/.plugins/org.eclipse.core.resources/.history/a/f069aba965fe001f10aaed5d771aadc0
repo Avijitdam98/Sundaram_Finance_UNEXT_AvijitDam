@@ -1,0 +1,58 @@
+package com.collections;
+
+import java.util.ArrayList;
+
+class product{
+	
+	int Pid;
+	String Pname;
+	int Pid_price;
+	public product(int pid, String pname, int pid_price) {
+		super();
+		Pid = pid;
+		Pname = pname;
+		Pid_price = pid_price;
+	}
+	public int getPid() {
+		return Pid;
+	}
+	@Override
+	public String toString() {
+		return "product [Pid=" + Pid + ", Pname=" + Pname + ", Pid_price=" + Pid_price + "]";
+	}
+	public void setPid(int pid) {
+		Pid = pid;
+	}
+	public String getPname() {
+		return Pname;
+	}
+	public void setPname(String pname) {
+		Pname = pname;
+	}
+	public int getPid_price() {
+		return Pid_price;
+	}
+	public void setPid_price(int pid_price) {
+		Pid_price = pid_price;
+	}
+	
+}
+
+public class Practice3 {
+
+	public static void main(String[] args) {
+		
+		ArrayList<product> pd=new ArrayList<product>();
+		product p1= new product(10,"Biscuit",1000);
+		product p2= new product(11,"Choclate",2000);
+		product p3= new product(12,"Starwbeey",3000);
+		pd.add(p1);
+		pd.add(p2);
+		pd.add(p3);
+		
+		
+		
+
+	}
+
+}

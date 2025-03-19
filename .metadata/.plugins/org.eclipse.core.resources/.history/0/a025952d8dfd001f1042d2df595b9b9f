@@ -1,0 +1,23 @@
+package com.abstractclas;
+
+public class PermanentEmployee extends Employee {
+    private double basicPay;
+
+    // Constructor
+    public PermanentEmployee(int employeeId, String employeeName, double basicPay) {
+        super(employeeId, employeeName);
+        this.basicPay = basicPay;
+    }
+
+   
+    @Override
+    public void calculateSalary() {
+        this.salary = basicPay - (0.12 * basicPay); // Deducting 12% tax
+    }
+
+	@Override
+	protected double getSalary() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

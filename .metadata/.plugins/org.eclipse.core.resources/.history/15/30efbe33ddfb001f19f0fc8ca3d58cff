@@ -1,0 +1,29 @@
+package com.pack  // Define package
+
+public class AccessModifiersExample {  // Public class (accessible anywhere)
+    
+    public int publicVar = 10;  // Public variable (accessible anywhere)
+    private int privateVar = 20;  // Private variable (accessible only in this class)
+    int defaultVar = 30;  // Default variable (accessible only within the same package)
+
+    // Public method
+    public void publicMethod() {
+        System.out.println("Public Method: Accessible anywhere");
+    }
+
+    // Private method
+    private void privateMethod() {
+        System.out.println("Private Method: Accessible only in this class");
+    }
+
+    // Default method (No modifier)
+    void defaultMethod() {
+        System.out.println("Default Method: Accessible within the same package");
+    }
+
+    // Method inside the same class to access the private method
+    public void accessPrivateMethod() {
+        System.out.println("Accessing private method inside the same class:");
+        privateMethod();  // Allowed (Because it's within the same class)
+    }
+}

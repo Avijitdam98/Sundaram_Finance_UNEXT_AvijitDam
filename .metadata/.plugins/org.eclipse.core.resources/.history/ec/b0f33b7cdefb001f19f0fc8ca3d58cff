@@ -1,0 +1,21 @@
+package com.pack;
+public class SamePackageTest {
+    public static void main(String[] args) {
+        AccessModifiersExample obj = new AccessModifiersExample();
+
+        // Accessing public members
+        System.out.println("Public Variable: " + obj.publicVar);  // Allowed
+        obj.publicMethod();  // Allowed
+
+        // Accessing default members (same package)
+        System.out.println("Default Variable: " + obj.defaultVar);  
+        obj.defaultMethod();  // Allowed
+
+        // Accessing private members (not allowed)
+        System.out.println("Private Variable: " + obj.privateVar);  // ❌ Error
+         obj.privateMethod();  // ❌ Error (Private method not accessible)
+
+        // Accessing private method using a public method inside the class
+        obj.accessPrivateMethod();  // Allowed (Because it's a public method accessing a private method)
+    }
+}

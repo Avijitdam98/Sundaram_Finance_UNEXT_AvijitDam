@@ -1,0 +1,47 @@
+package com.collections;
+
+import java.util.ArrayList;
+
+class Student{
+	int id;
+	String College;
+	String name;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCollege() {
+		return College;
+	}
+	public void setCollege(String college) {
+		College = college;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Student(int id, String college, String name) {
+		super();
+		this.id = id;
+		College = college;
+		this.name = name;
+	}
+}
+
+public class Generic {
+
+	public static void main(String[] args) {
+		ArrayList<Student> A=new ArrayList<Student>();
+		
+		for (int i = 0; i < A.size(); i++) {
+			System.out.println(A.getClass().getSimpleName());
+
+		}
+		
+	}
+
+}

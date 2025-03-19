@@ -1,0 +1,17 @@
+package com.abstractclas;
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        // Creating Permanent Employee
+        Employee emp1 = new PermanentEmployee(101, "John Doe", 5000);
+        emp1.calculateSalary();
+        emp1.displayDetails();
+
+        System.out.println("---------------------------");
+
+        // Creating Temporary Employee
+        Employee emp2 = new TemporaryEmployee(102, "Jane Smith", 40, 25);
+        emp2.calculateSalary();
+        emp2.displayDetails();
+    }
+}

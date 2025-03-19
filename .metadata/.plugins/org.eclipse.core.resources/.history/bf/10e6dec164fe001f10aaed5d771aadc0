@@ -1,0 +1,14 @@
+package com.collections;
+
+public class Practice3 {
+
+	public static void main(String[] args) {
+		int Pid;
+		String Pname;
+		
+		
+		
+
+	}
+
+}

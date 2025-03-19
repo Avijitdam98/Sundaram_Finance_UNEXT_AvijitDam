@@ -1,0 +1,34 @@
+
+public class Methodoverload {
+
+	// Method with two integer parameters
+    void add(String a) {
+        System.out.println("Sum (int, int): " + (a + b));
+    }
+
+    // Overloaded method with three integer parameters
+    void add(int a, int b, int c) {
+        System.out.println("Sum (int, int, int): " + (a + b + c));
+    }
+
+    // Overloaded method with double parameters
+    void add(double a, double b) {
+        System.out.println("Sum (double, double): " + (a + b));
+    }
+    
+    void add(float a,int b) {
+    	System.out.println("Sum (float,int):" +(a+b));
+    }
+    
+    
+	public static void main(String[] args) {
+		Methodoverload  obj = new Methodoverload ();
+        
+        obj.add(5, 10);         
+        obj.add(3, 7, 2);      
+        obj.add(4.5, 2.3);  
+        obj.add(5.5f,21);
+
+	}
+
+}

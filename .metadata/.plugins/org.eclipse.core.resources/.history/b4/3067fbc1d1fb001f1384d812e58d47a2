@@ -1,0 +1,26 @@
+class Student {
+    String name;
+    int age;
+
+    // Constructor
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+public class PassByValueExample {
+    static void modifyStudent(Student s) {
+        s.name = "Updated Name"; 
+        s.age = 22;
+    }
+
+    public static void main(String[] args) {
+        Student obj = new Student("Original Name", 20);
+        
+        System.out.println("Before method call: " + obj.name + ", " + obj.age);
+        modifyStudent(obj);  // Passing object reference
+        System.out.println("After method call: " + obj.name + ", " + obj.age); // Object is modified
+    }
+}

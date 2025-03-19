@@ -1,0 +1,29 @@
+package com.mypackage;
+
+class BankAccount {
+    private String accountNumber, accountHolder;
+    private double balance;
+    private static double interestRate = 3.5;
+
+    public BankAccount(String accNo, String holder, double balance) {
+        this.accountNumber = accNo;
+        this.accountHolder = holder;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) balance -= amount;
+    }
+
+    public static void setInterestRate(double newRate) {
+        interestRate = newRate;
+    }
+
+    public void displayDetails() {
+        System.out.println(accountHolder + " | " + accountNumber + " | $" + balance + " | Interest: " + interestRate + "%");
+    }
+}

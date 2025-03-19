@@ -1,0 +1,20 @@
+package com.collections;
+
+import java.util.HashSet;
+
+public class SetDemo {
+    public static void main(String[] args) {
+       
+        HashSet<Object> p = new HashSet<>(); 
+        
+        
+        p.add("Avijit");
+        p.add("Avijit");
+        p.add(100);
+        p.add(101);
+        p.add(true);
+        
+       
+        System.out.println(p);
+    }
+}

@@ -1,0 +1,39 @@
+package com.pack2;
+
+// Parent interface
+interface i1 {
+    int x = 10, y = 20; // Public, static, and final by default
+
+    void add(int a, int b);
+    void sub(int a, int b);
+}
+
+// Child interface extending i1
+interface i2 extends i1 {
+    void multiply(int a, int b);
+}
+
+// Class implementing the interface i2 (which includes methods from i1)
+class Calculator implements i2 {
+    public void add(int a, int b) {
+        System.out.println("Addition: " + (a + b));
+    }
+
+    public void sub(int a, int b) {
+        System.out.println("Subtraction: " + (a - b));
+    }
+
+    public void multiply(int a, int b) {
+        System.out.println("Multiplication: " + (a * b));
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        
+        obj.add(i1.x, i1.y);   // Uses constants from the interface
+        obj.sub(50, 30);
+        obj.multiply(5, 4);
+    }
+}

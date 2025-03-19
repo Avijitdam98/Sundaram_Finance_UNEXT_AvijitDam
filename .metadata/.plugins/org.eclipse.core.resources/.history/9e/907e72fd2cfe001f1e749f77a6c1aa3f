@@ -1,0 +1,25 @@
+package com.exceptions;
+
+import java.util.Scanner;
+
+public class AbnormalTermination {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int a = sc.nextInt();
+
+        int d = 0; // Declare variable outside try block
+
+        try {
+            d = 43 / a; // Possible division by zero
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed.");
+        }
+
+        System.out.println("Result: " + d);
+        System.out.println("Hello");
+
+        sc.close(); // Close scanner to avoid resource leak
+    }
+}

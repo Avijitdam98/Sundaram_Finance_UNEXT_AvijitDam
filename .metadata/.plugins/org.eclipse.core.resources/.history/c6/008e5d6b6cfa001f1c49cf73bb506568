@@ -1,0 +1,21 @@
+// Rectangle.java
+class Rectangle {
+    int length=6, breadth=8;    //instnace variable 
+    boolean flag;
+
+    void show() {
+        System.out.println(breadth* length+ " "+flag);
+        
+    }
+}
+
+
+
+//RectangleMain.java
+public class RectangleMain {
+ public static void main(String[] args) {
+//     Rectangle obj = new Rectangle();  
+	 new Rectangle();
+     obj.show();  // 
+ }
+}

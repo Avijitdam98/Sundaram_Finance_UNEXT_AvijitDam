@@ -1,0 +1,10 @@
+
+public class PassByValueExample {
+
+	public static void main(String[] args) {
+		  x = x + 10;  // Changes only local copy
+	        System.out.println("Inside modify method: " + x);
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.collections;
+
+import java.util.ArrayList;
+
+class Student{
+	int id;
+	String
+}
+
+public class Generic {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> A=new ArrayList<Integer>();
+		A.add(1);
+		A.add(7);
+		A.add(4);
+		A.add(6);
+		for (int i = 0; i < A.size(); i++) {
+			System.out.println(A.getClass().getSimpleName());
+
+		}
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.pack2;
+
+public class StringClass {
+	public static void main(String[] args) {
+		String s="Hello";
+		String a=s.toUpperCase();
+		System.out.println(a);
+		System.out.println(a.charAt(0));
+		System.out.println(a.concat("Avi"));
+		
+	}
+}

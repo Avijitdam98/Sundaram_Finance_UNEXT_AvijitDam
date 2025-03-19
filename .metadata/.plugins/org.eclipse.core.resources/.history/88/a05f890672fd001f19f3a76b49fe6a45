@@ -1,0 +1,22 @@
+package com.abstractclass;
+
+class App {
+    int i, j; // Instance variables
+    static int k; // Static variable
+
+   
+    static {
+        System.out.println("hello");
+    }
+    App();
+}
+
+public class StaticDemo {
+    public static void main(String[] args) {
+        App obj1 = new App();
+        App obj2 = new App(); 
+
+        System.out.println(obj1.i + " " + obj2.i + " " + App.k); 
+        
+    }
+}

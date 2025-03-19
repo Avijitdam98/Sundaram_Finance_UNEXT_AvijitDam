@@ -1,0 +1,11 @@
+package com.mypackage;
+
+public class Student {
+    public static void main(String[] args) {
+        // Creating Student Object
+        Student s = new Student("Alice Johnson", 21, "Computer Science");
+
+        // Printing object (toString() is automatically called)
+        System.out.println(s);
+    }
+}

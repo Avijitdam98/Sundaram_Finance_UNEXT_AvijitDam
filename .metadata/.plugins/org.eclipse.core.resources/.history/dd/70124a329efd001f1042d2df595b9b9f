@@ -1,0 +1,21 @@
+package com.pack2;
+
+public class StringClass {
+	public static void main(String[] args) {
+		String s=" Hello ";
+		String s1="Welcome";
+		String a=s.toUpperCase();
+		System.out.println(a);
+		System.out.println(a.charAt(0));
+		System.out.println(a.concat("Avi"));
+		System.out.println(a.replace("Hello","Hi"));
+		System.out.println(a.contains("el"));
+		System.out.println(a.indexOf("H"));
+		System.out.println(a.equals(s1));
+		System.out.println(a.trim());
+		System.out.println(a.endsWith("o"));
+		
+		
+	}
+}
+

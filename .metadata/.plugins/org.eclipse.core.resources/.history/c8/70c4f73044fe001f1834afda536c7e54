@@ -1,0 +1,85 @@
+package com.exceptions;
+
+
+
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+class InvalidTransactionException extends RuntimeException {
+    public InvalidTransactionException(String message) {
+        super(message);
+    }
+}
+
+
+class Account {
+    private double balance;
+    private String accountId;
+    
+    public Account(String accountId, double initialBalance) {
+        this.accountId = accountId;
+        this.balance = initialBalance;
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public String getAccountId() {
+        return accountId;
+    }
+    
+    
+    public void processTransaction(double amount) throws InsufficientFundsException {
+       
+        if (amount < 0) {
+            double withdrawAmount = Math.abs(amount);
+            if (withdrawAmount > balance) {
+                throw new InsufficientFundsException(
+                    "Cannot withdraw $" + withdrawAmount + ". Available balance: $" + balance);
+            }
+            balance += amount; // adds negative amount (subtracts)
+            System.out.println("Withdrawal of $" + withdrawAmount + " successful. New balance: $" + balance);
+        } 
+        // For deposits (positive amounts)
+        else if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit of $" + amount + " successful. New balance: $" + balance);
+        } 
+        // For zero amount
+        else {
+            throw new InvalidTransactionException("Transaction amount cannot be zero.");
+        }
+    }
+}
+
+// Main class
+public class BankingDemo {
+    public static void main(String[] args) {
+        Account account = new Account("ACC1001", 500);
+        System.out.println("New account created: " + account.getAccountId() + 
+                           " with initial balance: $" + account.getBalance());
+        
+        // Test cases with exception handling
+        processTransaction(account, -700);  // Insufficient funds
+        processTransaction(account, 0);     // Invalid amount
+        processTransaction(account, 200);   // Deposit
+        processTransaction(account, -300);  // Withdrawal
+    }
+    
+    // Helper method to handle exceptions consistently
+    private static void processTransaction(Account account, double amount) {
+        try {
+            account.processTransaction(amount);
+        } catch (InsufficientFundsException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+        } catch (InvalidTransactionException e) {
+            System.out.println("Invalid transaction: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unexpected error: " + e.getMessage());
+        }
+    }
+}

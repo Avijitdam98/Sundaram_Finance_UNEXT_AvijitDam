@@ -1,0 +1,18 @@
+
+public class PassByValueExample {
+
+	public static void main(String[] args) {
+		static void modify(int x) {
+	        x = x + 10;  // Changes only local copy
+	        System.out.println("Inside modify method: " + x);
+	    }
+
+	    public static void main(String[] args) {
+	        int num = 50;
+	        System.out.println("Before method call: " + num);
+	        modify(num);
+	        System.out.println("After method call: " + num); // Or
+
+	}
+
+}

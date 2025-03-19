@@ -1,0 +1,24 @@
+package com.collections;
+
+import java.util.Stack;
+
+public class LearnArrayList {
+
+    public static void main(String[] args) {
+        Stack<Integer> str = new Stack<>(); // Corrected variable name formatting
+        str.add(10);
+        str.add(20);
+        str.add(30);
+
+        System.out.println(str);             
+        System.out.println(str.peek());      
+        System.out.println(str.empty());     
+        System.out.println(str.size());      
+        System.out.println(str.contains(10)); 
+
+        
+        for (int i = 0; i < str.size(); i++) {
+            System.out.println(str.get(i)); 
+        }
+    }
+}

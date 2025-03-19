@@ -1,0 +1,10 @@
+
+public class Cuboid1 {
+
+	
+		int l,b;
+		void volume() {}
+		System.out.println(l*b);
+	}
+
+}

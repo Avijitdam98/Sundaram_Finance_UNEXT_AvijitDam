@@ -1,0 +1,21 @@
+package com.mypackage;
+
+// Student Class
+public class toStirng {
+    private String name;
+    private int age;
+    private String course;
+
+    // Constructor
+    public void Student(String name, int age, String course) {
+        this.name = name;
+        this.age = age;
+        this.course = course;
+    }
+
+    // Overriding toString() method
+    @Override
+    public String toString() {
+        return "Student{Name='" + name + "', Age=" + age + ", Course='" + course + "'}";
+    }
+}

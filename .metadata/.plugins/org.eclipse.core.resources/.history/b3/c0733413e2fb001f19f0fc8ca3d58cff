@@ -1,0 +1,24 @@
+public class Student{
+	orivate int sudnetid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class GetSetter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

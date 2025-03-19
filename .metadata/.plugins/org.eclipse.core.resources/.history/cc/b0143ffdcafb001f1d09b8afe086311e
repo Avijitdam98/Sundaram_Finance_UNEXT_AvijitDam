@@ -1,0 +1,15 @@
+
+public class Cuboid1 {
+	
+	
+	int l,b;
+	void volume() {
+		System.out.println(l*b);
+	}
+	
+
+	public static void main(String[] args) {
+		Cuboid1 obj=new Cuboid1
+	}
+
+}

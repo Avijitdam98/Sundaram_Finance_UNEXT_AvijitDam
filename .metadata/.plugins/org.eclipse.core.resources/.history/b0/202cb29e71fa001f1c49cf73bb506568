@@ -1,0 +1,31 @@
+// Rectangle.java
+import java.util.Scanner;
+class Cuboid {
+    int length, breadth,height;    //instnace variable 
+    boolean flag;
+    void setValues(int p,int q)  //Arguments 
+    {
+    	length=p;
+    	breadth=q;
+    }
+
+    int showArea() {
+        return (breadth* length);
+        
+    }
+}
+
+
+
+//RectangleMain.java
+public class CuboidMain {
+ public static void main(String[] args) {
+	 Scanner s=new Scanner(System.in);
+     Rectangle obj = new Rectangle();  
+     System.out.println("Enter lenghth and Breadth: ");
+     int a =s.nextInt();
+     int b=s.nextInt();
+     obj.setValues(a,b);
+     obj.showArea();
+ }
+}

@@ -1,0 +1,21 @@
+
+public class Rectangle{
+	int length,breadth;   //instance variables
+	void show()
+	
+	
+	
+	
+}
+public class RectangleMain{
+	public static void main(String[] args) {
+		Rectangle obj=new Rectangle();
+		obj.show();
+
+
+}
+
+
+	}
+
+}

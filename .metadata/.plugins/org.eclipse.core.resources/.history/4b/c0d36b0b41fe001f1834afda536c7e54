@@ -1,0 +1,20 @@
+package com.exceptions;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class CheckedExceptions {
+
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("C:\\Jouney_ppt\\AVijit_Dam_Journey_Book_week2.pdf");
+            System.out.println("File opened successfully!");
+            fis.close(); // Close the file to prevent resource leak
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found at the specified location.");
+        } catch (IOException e) {
+            System.out.println("Error while closing the file.");
+        }
+    }
+}

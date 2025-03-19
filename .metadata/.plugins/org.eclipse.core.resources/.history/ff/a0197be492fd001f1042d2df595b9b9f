@@ -1,0 +1,16 @@
+package com.pack2;
+
+class Example {  // ✅ Class should be defined outside main()
+    final int value; // Not initialized here
+
+    Example(int val) {
+        value = val; // Can be assigned only once
+    }
+}
+
+public class finalkeyword { 
+    public static void main(String[] args) {
+        Example obj = new Example(100);
+        System.out.println("Final value: " + obj.value); // ✅ Access final variable
+    }
+}

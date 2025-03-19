@@ -1,0 +1,51 @@
+package com.Collection;
+
+import java.util.*;
+
+public class Practice1 {
+
+    private static TreeMap<Integer, String> policyMap = new TreeMap<>();
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the number of policies:");
+        int n = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter policy ID:");
+            int policyId = scanner.nextInt();
+            scanner.nextLine(); // consume the newline
+
+            System.out.println("Enter policy name:");
+            String policyName = scanner.nextLine();
+
+            addPolicyDetails(policyId, policyName);
+        }
+
+        System.out.println("All policies in sorted order:");
+        for (Map.Entry<Integer, String> entry : policyMap.entrySet()) {
+            System.out.println("Policy ID: " + entry.getKey() + ", Policy Name: " + entry.getValue());
+        }
+
+        System.out.println("Enter policy type to search:");
+        String policyType = scanner.nextLine();
+        List<Integer> policyIds = searchBasedOnPolicyType(policyType);
+        System.out.println("Matching policy IDs: " + policyIds);
+    }
+
+    public static void addPolicyDetails(int policyId, String policyName) {
+        policyMap.put(policyId, policyName);
+    }
+
+    public static List<Integer> searchBasedOnPolicyType(String policyType) {
+        List<Integer> matchingPolicyIds = new ArrayList<>();
+        for (Map.Entry<Integer, String> entry : policyMap.entrySet()) {
+            if (entry.getValue().contains(policyType.toLowerCase())) {
+                matchingPolicyIds.add(entry.getKey());
+            }
+        }
+        return matchingPolicyIds;
+    }
+}

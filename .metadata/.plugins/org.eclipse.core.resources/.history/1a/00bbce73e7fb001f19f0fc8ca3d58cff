@@ -1,0 +1,22 @@
+import java.util.Scanner; // Import Scanner for user input
+
+public class Arrays {
+    public static void main(String[] args) {
+        int arr[] = new int[5]; // Declare an integer array of size 5
+        Scanner s = new Scanner(System.in); // Create a Scanner object
+
+        // Taking user input to store in array
+        System.out.println("Enter 5 numbers:");
+        for (int i = 0; i < arr.length; i++) { 
+            arr[i] = s.nextInt(); // Storing user input in array
+        }
+
+        // Displaying the array elements
+        System.out.println("You entered:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " "); // Print each element
+        }
+
+        s.close(); // Close the scanner
+    }
+}

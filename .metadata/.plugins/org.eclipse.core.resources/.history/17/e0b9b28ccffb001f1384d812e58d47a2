@@ -1,0 +1,26 @@
+public class MethodOverload {
+
+    // Method with one String parameter (Student ID)
+    void add(String a) {
+        System.out.println("Student ID: " + a);
+    }
+
+    // Overloaded method with String and double (Student ID and Name)
+    void add(String a, String b) { 
+        System.out.println("Student ID: " + a + ", Name: " + b);
+    }
+
+    // Overloaded method with double, String, and String (Student ID, Name, Course)
+    void add(String a, String b, String c) { 
+        System.out.println("Student ID: " + a + ", Name: " + b + ", Course: " + c);
+    }
+
+    public static void main(String[] args) {
+        MethodOverload obj = new MethodOverload();
+
+        // Corrected method calls
+        obj.add("102");                 // Calls add(String)
+        obj.add("102", "Avijit");        // Calls add(String, String)
+        obj.add("102", "Avijit", "Java"); // Calls add(String, String, String)
+    }
+}

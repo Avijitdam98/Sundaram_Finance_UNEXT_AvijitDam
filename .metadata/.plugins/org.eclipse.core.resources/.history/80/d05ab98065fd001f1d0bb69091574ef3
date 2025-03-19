@@ -1,0 +1,50 @@
+// Parent class
+class BankAccount {
+    String accountNumber;
+
+    void showBalance() {
+        System.out.println("Showing balance for account: " + accountNumber);
+    }
+}
+
+// Child class 1
+class SavingsAccount extends BankAccount {
+    double interestRate = 4.5;
+
+    void getInterestRate() {
+        System.out.println("Interest Rate: " + interestRate + "%");
+    }
+}
+
+// Child class 2
+class CurrentAccount extends BankAccount {
+    void overdraftLimit() {
+        System.out.println("Overdraft limit is $5000");
+    }
+}
+
+public class BankDemo {
+    public static void main(String[] args) {
+        // Upcasting: Treating SavingsAccount as a BankAccount
+        BankAccount myAccount = new SavingsAccount(); 
+        myAccount.accountNumber = "SA12345";
+        myAccount.showBalance(); // Calls method from BankAccount
+
+        // Downcasting: Accessing SavingsAccount-specific method
+        if (myAccount instanceof SavingsAccount) { // Safety check
+            SavingsAccount savings = (SavingsAccount) myAccount;
+            savings.getInterestRate(); // Calls SavingsAccount method
+        }
+
+        // Upcasting: Treating CurrentAccount as a BankAccount
+        myAccount = new CurrentAccount();
+        myAccount.accountNumber = "CA67890";
+        myAccount.showBalance(); 
+
+        // Downcasting: Accessing CurrentAccount-specific method
+        if (myAccount instanceof CurrentAccount) { // Safety check
+            CurrentAccount current = (CurrentAccount) myAccount;
+            current.overdraftLimit();
+        }
+    }
+}

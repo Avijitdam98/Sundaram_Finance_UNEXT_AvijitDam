@@ -1,0 +1,18 @@
+package com.pack2;
+
+interface i1{
+	int x-10,y=20;
+	void add(int a,int b);
+	void sub(int a,int b);
+	
+	
+}
+
+
+
+public class InterfaceDemo {
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.mypackage;
+
+
+
+
+public class toStirng {
+	Studnet s=new Student();
+}

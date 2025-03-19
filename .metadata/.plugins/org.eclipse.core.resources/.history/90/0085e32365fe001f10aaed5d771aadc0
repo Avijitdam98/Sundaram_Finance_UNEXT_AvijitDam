@@ -1,0 +1,27 @@
+package com.collections;
+
+import java.util.ArrayList;
+
+class product{
+	
+	int Pid;
+	String Pname;
+	int Pid_price;
+	public product(int pid, String pname, int pid_price) {
+		super();
+		Pid = pid;
+		Pname = pname;
+		Pid_price = pid_price;
+	}
+	
+}
+
+public class Practice3 {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Product> Std=new ArrayList<Product>();
+
+	}
+
+}

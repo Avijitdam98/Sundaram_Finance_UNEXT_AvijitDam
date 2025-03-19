@@ -1,0 +1,13 @@
+
+public class Cuboid1 {
+	
+	
+	int l,b;
+	void volume()
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

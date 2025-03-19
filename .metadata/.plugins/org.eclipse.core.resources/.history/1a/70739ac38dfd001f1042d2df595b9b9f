@@ -1,0 +1,23 @@
+package com.abstractclas;
+
+public abstract class Employee {
+    protected int employeeId;
+    protected String employeeName;
+    protected double salary;
+
+    // Constructor
+    public Employee(int employeeId, String employeeName) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+    }
+
+    // Abstract method
+    public abstract void calculateSalary();
+
+    // Display details
+    public void displayDetails() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Salary: $" + salary);
+    }
+}

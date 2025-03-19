@@ -1,0 +1,21 @@
+// Rectangle.java
+public class Rectangle {
+    int length, breadth;  // Instance variables
+
+    // Method to show the values of length and breadth
+    void show() {
+        System.out.println("Length: " + length);
+        System.out.println("Breadth: " + breadth);
+    }
+}
+
+
+// Main class to test Rectangle
+public class RectangleMain {
+    public static void main(String[] args) {
+        Rectangle obj = new Rectangle();  
+        obj.length = 10;  
+        obj.breadth = 5;
+        obj.show();  
+    }
+}

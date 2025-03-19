@@ -1,0 +1,30 @@
+class person{
+	int id;
+	String Namme;
+	double salary;
+	
+	void showValues() {}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class PersonDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

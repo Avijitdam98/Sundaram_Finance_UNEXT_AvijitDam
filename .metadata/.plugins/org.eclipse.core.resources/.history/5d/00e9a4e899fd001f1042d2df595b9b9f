@@ -1,0 +1,62 @@
+package com.pack2;
+
+
+interface Payment {
+    void processPayment(double amount);
+    String getPaymentMethod();
+}
+
+
+class CreditCardPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing credit card payment of $" + amount);
+    }
+
+    public String getPaymentMethod() {
+        return "Credit Card";
+    }
+}
+
+// PayPal Payment Implementation
+class PayPalPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing PayPal payment of $" + amount);
+    }
+
+    public String getPaymentMethod() {
+        return "PayPal";
+    }
+}
+
+// Bank Transfer Payment Implementation
+class BankTransferPayment implements Payment {
+    public void processPayment(double amount) {
+        System.out.println("Processing bank transfer payment of $" + amount);
+    }
+
+    public String getPaymentMethod() {
+        return "Bank Transfer";
+    }
+}
+
+// Demo Class to Demonstrate Polymorphism
+public class PaymentDemo {
+    // Method to process any type of payment
+    static void processTransaction(Payment payment, double amount) {
+        System.out.println("Payment Method: " + payment.getPaymentMethod());
+        payment.processPayment(amount);
+        System.out.println("------------------------");
+    }
+
+    public static void main(String[] args) {
+        // Creating payment objects
+        Payment ccPayment = new CreditCardPayment();
+        Payment paypalPayment = new PayPalPayment();
+        Payment bankPayment = new BankTransferPayment();
+
+        // Demonstrating Polymorphism
+        processTransaction(ccPayment, 100.0);
+        processTransaction(paypalPayment, 200.5);
+        processTransaction(bankPayment, 500.75);
+    }
+}

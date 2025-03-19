@@ -1,0 +1,21 @@
+package com.exceptions;
+
+import java.io.IOException;
+
+public class ThrowsEx {
+    // Method declares that it might throw an IOException
+    static void meth() throws IOException {
+        System.out.println("Welcome to meth");
+        throw new IOException("Demo Exception"); // Throwing a checked exception
+    }
+
+    public static void main(String[] args) {
+        try {
+            meth(); // Must be inside try-catch because IOException is checked
+        } catch (IOException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+
+        System.out.println("Hello"); // This will still execute
+    }
+}

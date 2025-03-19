@@ -1,0 +1,130 @@
+package com.abstractclas;
+import java.util.Scanner;
+
+// Abstract Class: Employee
+abstract class Employee {
+    protected int employeeId;
+    protected String employeeName;
+    protected double salary;
+
+    // Constructor
+    public Employee(int employeeId, String employeeName) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+    }
+
+    // Getters and Setters
+    public int getEmployeeId() { return employeeId; }
+    public String getEmployeeName() { return employeeName; }
+    public double getSalary() { return salary; }
+
+    // Abstract Method (To be implemented by subclasses)
+    abstract void calculateSalary();
+
+    // Method to display Employee Details
+    public void displayDetails() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+// Subclass: PermanentEmployee
+class PermanentEmployee extends Employee {
+    private double basicPay;
+
+    // Constructor
+    public PermanentEmployee(int employeeId, String employeeName, double basicPay) {
+        super(employeeId, employeeName);
+        this.basicPay = basicPay;
+    }
+
+    // Implementing Abstract Method
+    @Override
+    void calculateSalary() {
+        this.salary = basicPay - (0.12 * basicPay); // Deducting 12% tax
+    }
+}
+
+// Subclass: TemporaryEmployee
+class TemporaryEmployee extends Employee {
+    private int hoursWorked;
+    private int hourlyWages;
+
+    // Constructor
+    public TemporaryEmployee(int employeeId, String employeeName, int hoursWorked, int hourlyWages) {
+        super(employeeId, employeeName);
+        this.hoursWorked = hoursWorked;
+        this.hourlyWages = hourlyWages;
+    }
+
+    // Implementing Abstract Method
+    @Override
+    void calculateSalary() {
+        this.salary = hoursWorked * hourlyWages;
+    }
+}
+
+// Class: Loan
+class Loan {
+    public double calculateLoanAmount(Employee employeeObj) {
+        if (employeeObj instanceof PermanentEmployee) {
+            return 0.15 * employeeObj.getSalary(); // 15% loan for permanent employees
+        } else if (employeeObj instanceof TemporaryEmployee) {
+            return 0.10 * employeeObj.getSalary(); // 10% loan for temporary employees
+        }
+        return 0;
+    }
+}
+
+// Class: Main (User Input and Execution)
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Loan loanObj = new Loan();
+
+        System.out.println("Choose Employee Type: \n1. Permanent Employee \n2. Temporary Employee");
+        int choice = sc.nextInt();
+
+        Employee emp = null;
+
+        if (choice == 1) {
+            System.out.print("Enter Employee ID: ");
+            int empId = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            System.out.print("Enter Employee Name: ");
+            String empName = sc.nextLine();
+
+            System.out.print("Enter Basic Pay: ");
+            double basicPay = sc.nextDouble();
+
+            emp = new PermanentEmployee(empId, empName, basicPay);
+        } else if (choice == 2) {
+            System.out.print("Enter Employee ID: ");
+            int empId = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            System.out.print("Enter Employee Name: ");
+            String empName = sc.nextLine();
+
+            System.out.print("Enter Hours Worked: ");
+            int hoursWorked = sc.nextInt();
+
+            System.out.print("Enter Hourly Wages: ");
+            int hourlyWages = sc.nextInt();
+
+            emp = new TemporaryEmployee(empId, empName, hoursWorked, hourlyWages);
+        } else {
+            System.out.println("Invalid choice! Exiting...");
+            sc.close();
+            return;
+        }
+
+        emp.calculateSalary();
+        emp.displayDetails();
+        System.out.println("Loan Amount: $" + loanObj.calculateLoanAmount(emp));
+
+        sc.close();
+    }
+}

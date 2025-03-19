@@ -1,0 +1,48 @@
+import java.util.Scanner; // Import Scanner for user input
+
+class Person {
+    int id;
+    String name; // Fixed the typo from "Namme" to "name"
+    double salary;
+
+    // Constructor to initialize values
+    Person(int i, String n, double d) {
+        id = i;
+        name = n;
+        salary = d;
+    }
+
+    // Method to display person details
+    void display() {
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+public class PersonDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Taking input from the user
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
+
+        sc.nextLine(); // Consume the newline left by nextInt()
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        double salary = sc.nextDouble();
+
+        // Creating object with user input
+        Person p = new Person(id, name, salary);
+
+        // Displaying the details
+        System.out.println("\nPerson Details:");
+        p.display();
+
+        sc.close(); // Close the scanner
+    }
+}

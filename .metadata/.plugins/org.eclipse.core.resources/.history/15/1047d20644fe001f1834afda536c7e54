@@ -1,0 +1,72 @@
+package com.exceptions;
+
+
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+
+class InvalidAmountException extends RuntimeException {
+    public InvalidAmountException(String message) {
+        super(message);
+    }
+}
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    // Method to return the current balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount <= 0) {
+            throw new InvalidAmountException("Withdrawal amount cannot be negative or zero.");
+        }
+        if (amount > balance) {
+            throw new InsufficientFundsException("Insufficient funds. Available balance: " + balance);
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. Remaining balance: " + balance);
+    }
+}
+
+
+public class BankDetails{
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(500); 
+
+        
+        try {
+            account.withdraw(-100);
+        } catch (InvalidAmountException e) {
+            System.out.println("Exception: " + e.getMessage());
+        } catch (InsufficientFundsException e) {
+            
+        }
+
+       
+        try {
+            account.withdraw(600);
+        } catch (InvalidAmountException e) {
+           
+        } catch (InsufficientFundsException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        
+        try {
+            account.withdraw(300);
+        } catch (InvalidAmountException | InsufficientFundsException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}

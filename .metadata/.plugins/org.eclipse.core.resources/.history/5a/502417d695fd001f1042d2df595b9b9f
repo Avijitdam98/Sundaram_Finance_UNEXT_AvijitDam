@@ -1,0 +1,12 @@
+package com.pack2;
+
+interface i1;
+
+
+
+public class InterfaceDemo {
+	public static void main(String[] args) {
+		
+	}
+
+}

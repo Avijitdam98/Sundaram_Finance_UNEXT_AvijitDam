@@ -1,0 +1,78 @@
+// Base class
+package com.dynamicpolymorphism;
+class LibraryItem {
+    String title;
+    String author;
+    int yearPublished;
+
+    // Constructor
+    LibraryItem(String title, String author, int yearPublished) {
+        this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
+    }
+
+    // Method to display details (Overridden in subclasses)
+    void displayDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Year Published: " + yearPublished);
+    }
+}
+
+// Subclass: Book
+class Book extends LibraryItem {
+    String genre;
+
+    // Constructor
+    Book(String title, String author, int yearPublished, String genre) {
+        super(title, author, yearPublished);
+        this.genre = genre;
+    }
+
+    // Overriding displayDetails()
+    @Override
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Genre: " + genre);
+        System.out.println("----------------------");
+    }
+}
+
+// Subclass: Magazine
+class Magazine extends LibraryItem {
+    int issueNumber;
+
+    // Constructor
+    Magazine(String title, String author, int yearPublished, int issueNumber) {
+        super(title, author, yearPublished);
+        this.issueNumber = issueNumber;
+    }
+
+    // Overriding displayDetails()
+    @Override
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Issue Number: " + issueNumber);
+        System.out.println("----------------------");
+    }
+}
+
+// Main class
+public class LibaryDemo {
+    public static void main(String[] args) {
+        // Creating objects using Upcasting
+        LibraryItem book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Classic Fiction");
+        LibraryItem book2 = new Book("1984", "George Orwell", 1949, "Dystopian");
+        LibraryItem magazine1 = new Magazine("National Geographic", "Multiple Authors", 2024, 101);
+        LibraryItem magazine2 = new Magazine("Time", "Various", 2023, 78);
+
+        // Storing in an array (Polymorphism)
+        LibraryItem[] libraryItems = {book1, book2, magazine1, magazine2};
+
+        // Displaying details using polymorphism
+        for (LibraryItem item : libraryItems) {
+            item.displayDetails();
+        }
+    }
+}

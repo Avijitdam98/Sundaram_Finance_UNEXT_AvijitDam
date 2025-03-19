@@ -1,0 +1,33 @@
+package com.exceptions;
+
+import java.util.Scanner;
+
+public class Practice2 {
+
+    static void checkString(String input) throws IllegalArgumentException, RuntimeException {
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException("Input cannot be empty!");
+        } else if (input.length() < 5) {
+            throw new RuntimeException("Input must be at least 5 characters long!");
+        } else {
+            System.out.println("Valid input: " + input);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            System.out.print("Enter a string: ");
+            String userInput = scanner.nextLine();
+            checkString(userInput);
+        } 
+        catch (RuntimeException ex) {
+            System.out.println("Exception caught: " + ex.getMessage());
+        } finally {
+        	scanner.close();
+        	System.out.println("Its close all the block");
+        }
+        
+    }
+}

@@ -1,0 +1,20 @@
+package com.collections;
+
+
+class product{
+	
+	int Pid;
+	String Pname;
+	int Pid_price;
+	
+}
+
+public class Practice3 {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

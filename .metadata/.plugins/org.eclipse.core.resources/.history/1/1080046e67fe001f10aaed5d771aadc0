@@ -1,0 +1,18 @@
+package com.collections;
+
+class Book{
+	String title;
+	String author;
+	String category;
+	float price;
+
+}
+
+
+public class Practice4 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

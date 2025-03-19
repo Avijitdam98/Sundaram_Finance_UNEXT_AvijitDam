@@ -1,0 +1,25 @@
+public class SwitchDemo {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        int bigger; // Variable to store the bigger value
+
+        // Determine the bigger number
+//        if (a > b) {
+//            bigger = a;
+//        } else {
+//            bigger = b;
+//        }
+
+        // Using switch statement
+        switch (bigger) {
+            case 10:
+                System.out.println("10 is bigger");
+                break;
+            case 20:
+                System.out.println("20 is bigger");
+                break;
+            default:
+                System.out.println("Unexpected value");
+        }
+    }
+}

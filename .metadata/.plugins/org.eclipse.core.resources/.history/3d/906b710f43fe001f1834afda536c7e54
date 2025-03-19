@@ -1,0 +1,24 @@
+// Custom Exception Class
+class InvalidAgeException extends RuntimeException {
+    InvalidAgeException(String s) {
+        super(s);  // Pass the message to the parent class (RuntimeException)
+    }
+}
+
+public class InvalidAgeExceptionDemo {
+    static void checkAge(int age) {
+        if (age < 18) {
+            throw new InvalidAgeException("Sorry!! Invalid age");
+        } else {
+            System.out.println("Valid age");
+        }
+    }
+
+    public static void main(String args[]) {
+        try {
+            checkAge(17);  // This will throw an exception
+        } catch (InvalidAgeException e) {
+            System.out.println("Caught Exception: " + e.getMessage());
+        }
+    }
+}

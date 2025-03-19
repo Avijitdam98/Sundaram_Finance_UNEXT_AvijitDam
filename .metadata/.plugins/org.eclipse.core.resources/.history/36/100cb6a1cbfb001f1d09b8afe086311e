@@ -1,0 +1,18 @@
+
+public class Cuboid1 {
+	
+	
+	int l,b;
+	cuboid1(int p,intq)
+	
+	void volume() {
+		System.out.println(l*b);
+	}
+	
+
+	public static void main(String[] args) {
+		Cuboid1 obj=new Cuboid1(2,3);
+		obj.volume();
+	}
+
+}

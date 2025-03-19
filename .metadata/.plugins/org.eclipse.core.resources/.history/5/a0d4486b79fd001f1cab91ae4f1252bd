@@ -1,0 +1,27 @@
+package com.mypackage;
+
+
+public class BankDemo {
+    public static void main(String[] args) {
+        
+        BankAccount account1 = new BankAccount("A101", "Alice", 5000);
+        BankAccount account2 = new BankAccount("A102", "Bob", 3000);
+
+
+        account1.deposit(1500);
+        account2.withdraw(500);
+
+        
+        System.out.println("Before changing interest rate:");
+        account1.displayAccountDetails();
+        account2.displayAccountDetails();
+
+        
+        BankAccount.setInterestRate(4.2);
+
+        // Display account details after changing interest rate
+        System.out.println("After changing interest rate:");
+        account1.displayAccountDetails();
+        account2.displayAccountDetails();
+    }
+}

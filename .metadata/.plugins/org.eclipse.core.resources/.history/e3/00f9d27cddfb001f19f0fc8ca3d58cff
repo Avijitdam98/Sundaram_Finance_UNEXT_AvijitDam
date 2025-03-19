@@ -1,0 +1,22 @@
+package anotherpackage;
+
+// Importing the public class from another package
+import mypackage.AccessModifiersExample;
+
+public class OutsidePackageTest {
+    public static void main(String[] args) {
+        AccessModifiersExample obj = new AccessModifiersExample();
+
+        // Accessing public members
+        System.out.println("Public Variable: " + obj.publicVar);  // Allowed
+        obj.publicMethod();  // Allowed
+
+        // Accessing default members (not allowed outside package)
+        // System.out.println("Default Variable: " + obj.defaultVar);  // ❌ Error
+        // obj.defaultMethod();  // ❌ Error
+
+        // Accessing private members (not allowed)
+        // System.out.println("Private Variable: " + obj.privateVar);  // ❌ Error
+        // obj.privateMethod();  // ❌ Error
+    }
+}
